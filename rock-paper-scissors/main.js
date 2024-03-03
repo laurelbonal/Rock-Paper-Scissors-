@@ -18,8 +18,9 @@ var classicScissors = document.querySelector('#scissors-classic')
 var playerScore = document.querySelector('.player-score')
 var computerScore = document.querySelector('.computer-score')
 var fighters = document.querySelector('.all-fighters')
-
-
+var showChoices = document.querySelector('.show-choices')
+var playerIcon = document.querySelector('.human-choice')
+var computerIcon = document.querySelector('.computer-choice')
 
 addEventListener('load', setHomeView)
 
@@ -45,6 +46,7 @@ function setClassicView(){
     challenge.classList.add('hidden')
     hardFighters.classList.add('hidden')
     chooseYourFighter.classList.remove('hidden')
+    showChoices.classList.add('hidden')
 }
 
 function setHardView(){
@@ -57,6 +59,7 @@ function setHardView(){
     hardMode.classList.add('hidden')
     hardFighters.classList.remove('hidden')
     chooseYourFighter.classList.remove('hidden')
+    showChoices.classList.add('hidden')
 }
 
 function setHomeView(){
@@ -68,6 +71,7 @@ function setHomeView(){
     gameMode.classList.remove('hidden')
     rules.classList.remove('hidden')
     chooseYourFighter.classList.add('hidden')
+    showChoices.classList.add('hidden')
 }
 
 function createPlayer(playerName, token, wins) {
@@ -116,7 +120,10 @@ function classicGame() {
     function handlePlayerChoice(choice) {
         var computerChoice = computerChoiceClassic();
         var winner = determineWinner(choice, computerChoice);
-        displayResult(winner);
+        displayPlayerChoiceClassic(choice)
+        displayComputerChoiceClassic(computerChoice)
+        addPoints(winner)
+        displayResultClassic(winner)
     }
     function determineWinner(playerChoice, computerChoice) {
         if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
@@ -128,19 +135,6 @@ function classicGame() {
         } else {
             return 'computer'
         }
-    }
-    function displayResult(winner) {
-        if (winner === 'player') {
-            chooseFighterText('You won!!!')
-        } else if (winner === 'computer') {
-            chooseFighterText("boooo! The robots winning :(")
-        } else {
-            chooseFighterText("Its a Draw!")
-        }
-        displayWins(player1, computer)
-        setTimeout(() => {
-            resetGame()
-        }, 3000);
     }
 }
 
@@ -163,7 +157,10 @@ function hardGame() {
     function handlePlayerChoice(choice) {
         var computerChoice = computerChoiceHard();
         var winner = determineWinner(choice, computerChoice);
-        displayResult(winner);
+        displayComputerChoiceHard(computerChoice)
+        displayPlayerChoiceHard(choice)
+        addPoints(winner)
+        displayResultHard(winner)
     }
     function determineWinner(playerChoice, computerChoice) {
         var extendedWinningCombos = {
@@ -181,20 +178,21 @@ function hardGame() {
             return 'computer'
         }
     }
-    function displayResult(winner) {
-        if (winner === 'player') {
-            chooseFighterText('You won!!!')
-        } else if (winner === 'computer') {
-            chooseFighterText("boooo! The robots winning :(")
-        } else {
-            chooseFighterText("Its a Draw!")
-        }
-        displayWins(player1, computer)
-        setTimeout(() => {
-            resetGame()
-        }, 3000);
+}
+
+function displayResultClassic(winner) {
+    if (winner === 'player') {
+        chooseFighterText('You won!!!');
+    } else if (winner === 'computer') {
+        chooseFighterText("boooo! The robots winning :(");
+    } else {
+        chooseFighterText("It's a Draw!");
     }
-} 
+    displayWins(player1, computer);
+    setTimeout(() => {
+        resetGameClassic();
+    }, 3000);
+}
 
 function displayWins(player1, computer){
     playerScore.innerText = `${player1.wins} wins!`
@@ -209,12 +207,112 @@ function addPoints(winner){
     } 
 }
 
-
 function chooseFighterText(text){
     chooseYourFighter.innerText = text
 }
 
-function resetGame(){
+function resetGameClassic(){
     chooseFighterText('Choose your fighter!')
+    showChoices.classList.add('hidden')
+    classicFighters.classList.remove('hidden')
+    changeGame.classList.remove('hidden')
 }
 
+function displayPlayerChoiceClassic(choice){
+    classicFighters.classList.add('hidden')
+    showChoices.classList.remove('hidden')
+    changeGame.classList.add('hidden')
+    if (choice === 'rock'){
+        playerIcon.innerHTML = '<img class="fighter" id="rock-classic" src="./assets/happy-rocks.png" alt="Rock">'
+    } 
+    if (choice === 'paper'){
+        playerIcon.innerHTML = '<img class="fighter" id="paper-classic" src="./assets/happy-paper.png" alt="Paper">'
+    }
+    if (choice === 'scissors'){
+        playerIcon.innerHTML = '<img class="fighter" id="scissors-classic" src="./assets/happy-scissors.png" alt="Scissors">'
+    }
+    setTimeout(() => {
+        resetGameClassic();
+    }, 3000);
+}
+
+function displayComputerChoiceClassic(computerChoice){
+    classicFighters.classList.add('hidden')
+    showChoices.classList.remove('hidden')
+    changeGame.classList.add('hidden')
+    if (computerChoice === 'rock') {
+        computerIcon.innerHTML = '<img class="fighter" id="rock-classic" src="./assets/happy-rocks.png" alt="Rock">'
+    } 
+    if (computerChoice === 'paper'){
+        computerIcon.innerHTML = '<img class="fighter" id="paper-classic" src="./assets/happy-paper.png" alt="Paper">'
+    }
+    if (computerChoice === 'scissors'){
+        computerIcon.innerHTML = '<img class="fighter" id="scissors-classic" src="./assets/happy-scissors.png" alt="Scissors">'
+    }
+}
+
+function displayResultHard(winner) {
+    if (winner === 'player') {
+        chooseFighterText('You won!!!');
+    } else if (winner === 'computer') {
+        chooseFighterText("boooo! The robots winning :(");
+    } else {
+        chooseFighterText("It's a Draw!");
+    }
+    displayWins(player1, computer);
+    setTimeout(() => {
+        resetGameHard();
+    }, 3000);
+}
+
+function resetGameHard(){
+    chooseFighterText('Choose your fighter!')
+    showChoices.classList.add('hidden')
+    hardFighters.classList.remove('hidden')
+    changeGame.classList.remove('hidden')
+}
+
+function displayPlayerChoiceHard(choice){
+    hardFighters.classList.add('hidden')
+    showChoices.classList.remove('hidden')
+    changeGame.classList.add('hidden')
+    if (choice === 'rock'){
+        playerIcon.innerHTML = '<img class="fighter" id="rock-classic" src="./assets/happy-rocks.png" alt="Rock">'
+    } 
+    if (choice === 'paper'){
+        playerIcon.innerHTML = '<img class="fighter" id="paper-classic" src="./assets/happy-paper.png" alt="Paper">'
+    }
+    if (choice === 'scissors'){
+        playerIcon.innerHTML = '<img class="fighter" id="scissors-classic" src="./assets/happy-scissors.png" alt="Scissors">'
+    }
+    if (choice === 'alien'){
+        playerIcon.innerHTML = '<img class="fighter" id="alien" src="./assets/happy-alien.png" alt="Alien">'
+    }
+    if (choice === 'lizard'){
+        playerIcon.innerHTML = '<img class="fighter" id="lizard" src="./assets/lizard.png" alt="Lizard">'
+    }
+    setTimeout(() => {
+        resetGameHard();
+    }, 3000);
+}
+
+function displayComputerChoiceHard(computerChoice){
+    hardFighters.classList.add('hidden')
+    showChoices.classList.remove('hidden')
+    changeGame.classList.add('hidden')
+    if (computerChoice === 'rock') {
+        computerIcon.innerHTML = '<img class="fighter" id="rock-classic" src="./assets/happy-rocks.png" alt="Rock">'
+    } 
+    if (computerChoice === 'paper'){
+        computerIcon.innerHTML = '<img class="fighter" id="paper-classic" src="./assets/happy-paper.png" alt="Paper">'
+    }
+    if (computerChoice === 'scissors'){
+        computerIcon.innerHTML = '<img class="fighter" id="scissors-classic" src="./assets/happy-scissors.png" alt="Scissors">'
+    }
+    if (computerChoice === 'alien'){
+        computerIcon.innerHTML = '<img class="fighter" id="alien" src="./assets/happy-alien.png" alt="Alien">'
+    }
+    if (computerChoice === 'lizard'){
+        computerIcon.innerHTML = '<img class="fighter" id="lizard" src="./assets/lizard.png" alt="Lizard">'
+    }
+}
