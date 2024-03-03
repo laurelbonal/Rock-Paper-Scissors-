@@ -1,10 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0"> <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Document</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+        <title>Rock Paper Scissors</title>
+    </head>
+    <body>
+        <section class="player1-tally">
+            <h4 class="player">player 1 🤠</h4>
+            <h4 class="player-score">0 wins!</h4>
+        </section>
+        <section class="main-game">
+            <header>ROCK, PAPER, SCISSORS</header>
+            <h1 class="game-mode-selection">choose your game mode</h1>
+            <section class="game-modes">
+                <button class="classic">classic</button>
+                <button class="hard">HARD MODE</button>
+            </section>
+            <section class="rules">
+                <div class="classic-rules">
+                    <h2>rock beats scissors</h2>
+                    <h2>scissors beats paper</h2>
+                    <h2>paper beats rock</h2>
+                </div>
+                <div class="hard-rules">
+                    <h3> rocks beat scissors and lizards</h3>
+                    <h3> papers beat rocks and aliens</h3>
+                    <h3> scissors beat papers and lizards</h3>
+                    <h3> lizards beat papers and aliens</h3>
+                    <h3> aliens beat scissors and rocks</h3>
+                </div>
+            </section>
+            <h4 class="challenge">So? Which will it be?</h4>
+            <h1 class="directions">choose your fighter!</h1>
+            <section class="all-fighters">
+                <section class="hard-fighters">
+                    <img class="fighter" id="alien" src="./assets/happy-alien.png" alt="Alien">
+                    <img class="fighter" id="paper" src="./assets/happy-paper.png" alt="Paper">
+                    <img class="fighter" id="rock" src="./assets/happy-rocks.png" alt="Rock">
+                    <img class="fighter" id="lizard" src="./assets/lizard.png" alt="Lizard">
+                    <img class="fighter" id="scissors" src="./assets/happy-scissors.png" alt="Scissors">
+                </section>
+                <section class="classic-fighters">
+                    <img class="fighter" id="paper-classic" src="./assets/happy-paper.png" alt="Paper">
+                    <img class="fighter" id="rock-classic" src="./assets/happy-rocks.png" alt="Rock">
+                    <img class="fighter" id="scissors-classic" src="./assets/happy-scissors.png" alt="Scissors">
+                </section>
+            </section>
+            <section class="show-choices">
+                <div class="human-choice"></div>
+                <div class="computer-choice"></div>
+            </section>
+            <button class="change-game-mode">change game mode</button>
+        </section>
+        <section class="computer-tally">
+            <h4 class="computer">computer 🤖</h4>
+            <h4 class="computer-score">0 wins!</h4>
+        </section>
+    </body>
+    <script type ="text/javascript" src="main.js"></script>
 </html>
