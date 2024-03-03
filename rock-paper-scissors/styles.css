@@ -1,0 +1,135 @@
+body {
+    background-color: #fcb8d0;
+    font-family: "Anta", sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0%;
+}
+
+.main-game {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+header {
+    font-size: 75px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+.game-modes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+}
+
+.classic {
+    font-family: "Anta", sans-serif;
+    background-color: darkseagreen;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 15px 32px;
+    height: 50px;
+    width: 175px;
+    margin-right: 62px;
+    margin-bottom: 20px;
+}
+
+.hard {
+    font-family: "Anta", sans-serif;
+    background-color: darkseagreen;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 15px 32px;
+    height: 50px;
+    width: 175px;
+    margin-left: 62px;
+    margin-bottom: 20px;
+}
+
+.fighters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fighter {
+    height: 75px;
+    width: 75px;
+}
+
+.player1-tally {
+    font-size: 25px;
+    flex-direction: column;
+    display: flex;
+    background-color: darkseagreen;
+    justify-content: normal;
+    align-items: center;
+    height: 100vh;
+    width: 20%;
+    border: black solid 4px;
+
+}
+
+.computer-tally {
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    background-color: darkseagreen;
+    justify-content: normal;
+    align-items: center;
+    width: 20%;
+    height: 100vh;
+    border: black solid 4px;
+}
+
+.rules {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.classic-rules {
+    font-family: "Anta", sans-serif;
+    background-color: darkseagreen;
+    border-radius: 10px;
+    height: 300px;
+    width: 300px;
+    margin-right: 15px;
+    text-align: center;
+    border: black solid 4px
+}
+
+.hard-rules {
+    font-family: "Anta", sans-serif;
+    background-color: darkseagreen;
+    border-radius: 10px;
+    height: 300px;
+    width: 300px;
+    margin-left: 15px;
+    text-align: center;
+    border: black solid 4px
+}
+
+.change-game-mode {
+    font-family: "Anta", sans-serif;
+    background-color: darkseagreen;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 15px 32px;
+    height: 50px;
+    width: 175px;
+}
+
+.hidden {
+    display: none;
+}
