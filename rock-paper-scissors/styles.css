@@ -28,19 +28,7 @@ h1 {
     align-items: center;  
 }
 
-.classic {
-    font-family: "Anta", sans-serif;
-    background-color: darkseagreen;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 10px;
-    padding: 15px 32px;
-    height: 50px;
-    width: 175px;
-    margin-right: 62px;
-    margin-bottom: 20px;
-}
-
+.classic, 
 .hard {
     font-family: "Anta", sans-serif;
     background-color: darkseagreen;
@@ -50,7 +38,7 @@ h1 {
     padding: 15px 32px;
     height: 50px;
     width: 175px;
-    margin-left: 62px;
+    margin-right: 62px;
     margin-bottom: 20px;
 }
 
@@ -65,20 +53,8 @@ h1 {
     width: 75px;
 }
 
+.computer-tally, 
 .player1-tally {
-    font-size: 25px;
-    flex-direction: column;
-    display: flex;
-    background-color: darkseagreen;
-    justify-content: normal;
-    align-items: center;
-    height: 100vh;
-    width: 20%;
-    border: black solid 4px;
-
-}
-
-.computer-tally {
     font-size: 25px;
     display: flex;
     flex-direction: column;
@@ -96,24 +72,14 @@ h1 {
     
 }
 
-.classic-rules {
-    font-family: "Anta", sans-serif;
-    background-color: darkseagreen;
-    border-radius: 10px;
-    height: 300px;
-    width: 300px;
-    margin-right: 15px;
-    text-align: center;
-    border: black solid 4px
-}
-
+.classic-rules, 
 .hard-rules {
     font-family: "Anta", sans-serif;
     background-color: darkseagreen;
     border-radius: 10px;
     height: 300px;
     width: 300px;
-    margin-left: 15px;
+    margin-right: 15px;
     text-align: center;
     border: black solid 4px
 }
