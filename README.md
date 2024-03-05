@@ -7,9 +7,9 @@ this project is rock, paper, scissors with two versions. It has the classic rock
 3. open terminal, make sure you are in the directory you want to open it with
 4. run command 'git clone https://github.com/laurelbonal/Rock-Paper-Scissors-'
 ### Preview of App:
-!(home screen)[/Users/laurelbonal/turing_work/1mod/rock-paper-scissors/assets/Screenshot 2024-02-29 at 2.18.12 PM.png]
-!(hard mode)[/Users/laurelbonal/turing_work/1mod/rock-paper-scissors/assets/Screenshot 2024-03-05 at 1.58.46 PM.png]
-!(classic mode)[/Users/laurelbonal/turing_work/1mod/rock-paper-scissors/assets/Screenshot 2024-03-05 at 1.58.34 PM.png]
+!(home screen)[assets/Screenshot 2024-02-29 at 2.18.12 PM.png]
+!(hard mode)[assets/Screenshot 2024-03-05 at 1.58.34 PM.png]
+!(classic mode)[assets/Screenshot 2024-03-05 at 1.58.46 PM.png]
 ### Context:
 I started this project on my 5th week of Turing with no prior coding experience. This project was done in about 12 hours split up throughout 5 days. 
 ### Contributors:
